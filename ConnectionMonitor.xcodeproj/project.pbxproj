@@ -1,0 +1,296 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C665A0D14FA4D0900E59880 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C665A0C14FA4D0900E59880 /* Cocoa.framework */; };
+		4C665A1714FA4D0900E59880 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C665A1514FA4D0900E59880 /* InfoPlist.strings */; };
+		4C665A1914FA4D0900E59880 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C665A1814FA4D0900E59880 /* main.m */; };
+		4C665A1D14FA4D0900E59880 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4C665A1B14FA4D0900E59880 /* Credits.rtf */; };
+		4C665A2014FA4D0900E59880 /* CMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C665A1F14FA4D0900E59880 /* CMAppDelegate.m */; };
+		4C665A2314FA4D0900E59880 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C665A2114FA4D0900E59880 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4C665A0814FA4D0900E59880 /* ConnectionMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConnectionMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C665A0C14FA4D0900E59880 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		4C665A0F14FA4D0900E59880 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		4C665A1014FA4D0900E59880 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4C665A1114FA4D0900E59880 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4C665A1414FA4D0900E59880 /* ConnectionMonitor-Info.plist */ = {isa = PBXFileReference; path = "ConnectionMonitor-Info.plist"; sourceTree = "<group>"; };
+		4C665A1614FA4D0900E59880 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4C665A1814FA4D0900E59880 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4C665A1A14FA4D0900E59880 /* ConnectionMonitor-Prefix.pch */ = {isa = PBXFileReference; path = "ConnectionMonitor-Prefix.pch"; sourceTree = "<group>"; };
+		4C665A1C14FA4D0900E59880 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		4C665A1E14FA4D0900E59880 /* CMAppDelegate.h */ = {isa = PBXFileReference; path = CMAppDelegate.h; sourceTree = "<group>"; };
+		4C665A1F14FA4D0900E59880 /* CMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMAppDelegate.m; sourceTree = "<group>"; };
+		4C665A2214FA4D0900E59880 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C665A0514FA4D0900E59880 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C665A0D14FA4D0900E59880 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C6659FD14FA4D0900E59880 = {
+			isa = PBXGroup;
+			children = (
+				4C665A1214FA4D0900E59880 /* ConnectionMonitor */,
+				4C665A0B14FA4D0900E59880 /* Frameworks */,
+				4C665A0914FA4D0900E59880 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4C665A0914FA4D0900E59880 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C665A0814FA4D0900E59880 /* ConnectionMonitor.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C665A0B14FA4D0900E59880 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C665A0C14FA4D0900E59880 /* Cocoa.framework */,
+				4C665A0E14FA4D0900E59880 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C665A0E14FA4D0900E59880 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C665A0F14FA4D0900E59880 /* AppKit.framework */,
+				4C665A1014FA4D0900E59880 /* CoreData.framework */,
+				4C665A1114FA4D0900E59880 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		4C665A1214FA4D0900E59880 /* ConnectionMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				4C665A1E14FA4D0900E59880 /* CMAppDelegate.h */,
+				4C665A1F14FA4D0900E59880 /* CMAppDelegate.m */,
+				4C665A2114FA4D0900E59880 /* MainMenu.xib */,
+				4C665A1314FA4D0900E59880 /* Supporting Files */,
+			);
+			path = ConnectionMonitor;
+			sourceTree = "<group>";
+		};
+		4C665A1314FA4D0900E59880 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4C665A1414FA4D0900E59880 /* ConnectionMonitor-Info.plist */,
+				4C665A1514FA4D0900E59880 /* InfoPlist.strings */,
+				4C665A1814FA4D0900E59880 /* main.m */,
+				4C665A1A14FA4D0900E59880 /* ConnectionMonitor-Prefix.pch */,
+				4C665A1B14FA4D0900E59880 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4C665A0714FA4D0900E59880 /* ConnectionMonitor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C665A2614FA4D0900E59880 /* Build configuration list for PBXNativeTarget "ConnectionMonitor" */;
+			buildPhases = (
+				4C665A0414FA4D0900E59880 /* Sources */,
+				4C665A0514FA4D0900E59880 /* Frameworks */,
+				4C665A0614FA4D0900E59880 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ConnectionMonitor;
+			productName = ConnectionMonitor;
+			productReference = 4C665A0814FA4D0900E59880 /* ConnectionMonitor.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4C6659FF14FA4D0900E59880 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "HicknHack Software GmbH";
+			};
+			buildConfigurationList = 4C665A0214FA4D0900E59880 /* Build configuration list for PBXProject "ConnectionMonitor" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4C6659FD14FA4D0900E59880;
+			productRefGroup = 4C665A0914FA4D0900E59880 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4C665A0714FA4D0900E59880 /* ConnectionMonitor */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4C665A0614FA4D0900E59880 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C665A1714FA4D0900E59880 /* InfoPlist.strings in Resources */,
+				4C665A1D14FA4D0900E59880 /* Credits.rtf in Resources */,
+				4C665A2314FA4D0900E59880 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C665A0414FA4D0900E59880 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C665A1914FA4D0900E59880 /* main.m in Sources */,
+				4C665A2014FA4D0900E59880 /* CMAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4C665A1514FA4D0900E59880 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C665A1614FA4D0900E59880 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4C665A1B14FA4D0900E59880 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C665A1C14FA4D0900E59880 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		4C665A2114FA4D0900E59880 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C665A2214FA4D0900E59880 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4C665A2414FA4D0900E59880 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4C665A2514FA4D0900E59880 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		4C665A2714FA4D0900E59880 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ConnectionMonitor/ConnectionMonitor-Prefix.pch";
+				INFOPLIST_FILE = "ConnectionMonitor/ConnectionMonitor-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4C665A2814FA4D0900E59880 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ConnectionMonitor/ConnectionMonitor-Prefix.pch";
+				INFOPLIST_FILE = "ConnectionMonitor/ConnectionMonitor-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C665A0214FA4D0900E59880 /* Build configuration list for PBXProject "ConnectionMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C665A2414FA4D0900E59880 /* Debug */,
+				4C665A2514FA4D0900E59880 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C665A2614FA4D0900E59880 /* Build configuration list for PBXNativeTarget "ConnectionMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C665A2714FA4D0900E59880 /* Debug */,
+				4C665A2814FA4D0900E59880 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4C6659FF14FA4D0900E59880 /* Project object */;
+}
