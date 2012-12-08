@@ -8,8 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface CMAppDelegate : NSObject <NSApplicationDelegate>
+@interface ESAppDelegate : NSObject <NSApplicationDelegate>
 
+#pragma mark properties
 @property (assign) IBOutlet NSWindow *window;
+
+#pragma mark actions
+- (IBAction)showPreferences:(id)sender;
 
 @end

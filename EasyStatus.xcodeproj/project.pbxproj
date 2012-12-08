@@ -7,28 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C09236416062FA000CDA4CF /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C09236316062FA000CDA4CF /* Defaults.plist */; };
 		4C665A0D14FA4D0900E59880 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C665A0C14FA4D0900E59880 /* Cocoa.framework */; };
 		4C665A1714FA4D0900E59880 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C665A1514FA4D0900E59880 /* InfoPlist.strings */; };
 		4C665A1914FA4D0900E59880 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C665A1814FA4D0900E59880 /* main.m */; };
 		4C665A1D14FA4D0900E59880 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4C665A1B14FA4D0900E59880 /* Credits.rtf */; };
-		4C665A2014FA4D0900E59880 /* CMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C665A1F14FA4D0900E59880 /* CMAppDelegate.m */; };
+		4C665A2014FA4D0900E59880 /* ESAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C665A1F14FA4D0900E59880 /* ESAppDelegate.m */; };
 		4C665A2314FA4D0900E59880 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C665A2114FA4D0900E59880 /* MainMenu.xib */; };
+		4C94C6A5162B368000184F89 /* ESConnectionDataDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C94C6A4162B368000184F89 /* ESConnectionDataDelegate.m */; };
+		4CB4E4C316061A8A0080C0B9 /* ESSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB4E4C116061A8A0080C0B9 /* ESSettingsController.m */; };
+		4CB4E4C416061A8A0080C0B9 /* ESSettingsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CB4E4C216061A8A0080C0B9 /* ESSettingsController.xib */; };
+		4CCCB6A8162A21E800BC4D62 /* ESStatusDaemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCB6A7162A21E800BC4D62 /* ESStatusDaemon.m */; };
+		4CCCB6AB162A233000BC4D62 /* ESSettingsKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCB6AA162A233000BC4D62 /* ESSettingsKeys.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4C665A0814FA4D0900E59880 /* ConnectionMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConnectionMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C09236316062FA000CDA4CF /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
+		4C665A0814FA4D0900E59880 /* EasyStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C665A0C14FA4D0900E59880 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		4C665A0F14FA4D0900E59880 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		4C665A1014FA4D0900E59880 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		4C665A1114FA4D0900E59880 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		4C665A1414FA4D0900E59880 /* ConnectionMonitor-Info.plist */ = {isa = PBXFileReference; path = "ConnectionMonitor-Info.plist"; sourceTree = "<group>"; };
+		4C665A1414FA4D0900E59880 /* EasyStatus-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EasyStatus-Info.plist"; sourceTree = "<group>"; };
 		4C665A1614FA4D0900E59880 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4C665A1814FA4D0900E59880 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4C665A1A14FA4D0900E59880 /* ConnectionMonitor-Prefix.pch */ = {isa = PBXFileReference; path = "ConnectionMonitor-Prefix.pch"; sourceTree = "<group>"; };
+		4C665A1A14FA4D0900E59880 /* EasyStatus-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EasyStatus-Prefix.pch"; sourceTree = "<group>"; };
 		4C665A1C14FA4D0900E59880 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		4C665A1E14FA4D0900E59880 /* CMAppDelegate.h */ = {isa = PBXFileReference; path = CMAppDelegate.h; sourceTree = "<group>"; };
-		4C665A1F14FA4D0900E59880 /* CMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMAppDelegate.m; sourceTree = "<group>"; };
+		4C665A1E14FA4D0900E59880 /* ESAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESAppDelegate.h; sourceTree = "<group>"; };
+		4C665A1F14FA4D0900E59880 /* ESAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESAppDelegate.m; sourceTree = "<group>"; };
 		4C665A2214FA4D0900E59880 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		4C94C6A3162B368000184F89 /* ESConnectionDataDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESConnectionDataDelegate.h; sourceTree = "<group>"; };
+		4C94C6A4162B368000184F89 /* ESConnectionDataDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESConnectionDataDelegate.m; sourceTree = "<group>"; };
+		4CB4E4C016061A8A0080C0B9 /* ESSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESSettingsController.h; sourceTree = "<group>"; };
+		4CB4E4C116061A8A0080C0B9 /* ESSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESSettingsController.m; sourceTree = "<group>"; };
+		4CB4E4C216061A8A0080C0B9 /* ESSettingsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ESSettingsController.xib; sourceTree = "<group>"; };
+		4CCCB6A6162A21E800BC4D62 /* ESStatusDaemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESStatusDaemon.h; sourceTree = "<group>"; };
+		4CCCB6A7162A21E800BC4D62 /* ESStatusDaemon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESStatusDaemon.m; sourceTree = "<group>"; };
+		4CCCB6A9162A233000BC4D62 /* ESSettingsKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESSettingsKeys.h; sourceTree = "<group>"; };
+		4CCCB6AA162A233000BC4D62 /* ESSettingsKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESSettingsKeys.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +62,7 @@
 		4C6659FD14FA4D0900E59880 = {
 			isa = PBXGroup;
 			children = (
-				4C665A1214FA4D0900E59880 /* ConnectionMonitor */,
+				4C665A1214FA4D0900E59880 /* EasyStatus */,
 				4C665A0B14FA4D0900E59880 /* Frameworks */,
 				4C665A0914FA4D0900E59880 /* Products */,
 			);
@@ -55,7 +71,7 @@
 		4C665A0914FA4D0900E59880 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4C665A0814FA4D0900E59880 /* ConnectionMonitor.app */,
+				4C665A0814FA4D0900E59880 /* EasyStatus.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -79,35 +95,69 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		4C665A1214FA4D0900E59880 /* ConnectionMonitor */ = {
+		4C665A1214FA4D0900E59880 /* EasyStatus */ = {
 			isa = PBXGroup;
 			children = (
-				4C665A1E14FA4D0900E59880 /* CMAppDelegate.h */,
-				4C665A1F14FA4D0900E59880 /* CMAppDelegate.m */,
-				4C665A2114FA4D0900E59880 /* MainMenu.xib */,
+				4CB4E4C816061AC40080C0B9 /* Delegates */,
 				4C665A1314FA4D0900E59880 /* Supporting Files */,
+				4CB4E4C716061AA40080C0B9 /* Views */,
+				4CCCB6AD162A234000BC4D62 /* Settings */,
 			);
-			path = ConnectionMonitor;
+			path = EasyStatus;
 			sourceTree = "<group>";
 		};
 		4C665A1314FA4D0900E59880 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4C665A1414FA4D0900E59880 /* ConnectionMonitor-Info.plist */,
+				4C665A1414FA4D0900E59880 /* EasyStatus-Info.plist */,
 				4C665A1514FA4D0900E59880 /* InfoPlist.strings */,
 				4C665A1814FA4D0900E59880 /* main.m */,
-				4C665A1A14FA4D0900E59880 /* ConnectionMonitor-Prefix.pch */,
+				4C665A1A14FA4D0900E59880 /* EasyStatus-Prefix.pch */,
 				4C665A1B14FA4D0900E59880 /* Credits.rtf */,
+				4C09236316062FA000CDA4CF /* Defaults.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4CB4E4C716061AA40080C0B9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4C665A2114FA4D0900E59880 /* MainMenu.xib */,
+				4CB4E4C016061A8A0080C0B9 /* ESSettingsController.h */,
+				4CB4E4C116061A8A0080C0B9 /* ESSettingsController.m */,
+				4CB4E4C216061A8A0080C0B9 /* ESSettingsController.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		4CB4E4C816061AC40080C0B9 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				4C665A1E14FA4D0900E59880 /* ESAppDelegate.h */,
+				4C665A1F14FA4D0900E59880 /* ESAppDelegate.m */,
+				4CCCB6A6162A21E800BC4D62 /* ESStatusDaemon.h */,
+				4CCCB6A7162A21E800BC4D62 /* ESStatusDaemon.m */,
+				4C94C6A3162B368000184F89 /* ESConnectionDataDelegate.h */,
+				4C94C6A4162B368000184F89 /* ESConnectionDataDelegate.m */,
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
+		4CCCB6AD162A234000BC4D62 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				4CCCB6A9162A233000BC4D62 /* ESSettingsKeys.h */,
+				4CCCB6AA162A233000BC4D62 /* ESSettingsKeys.m */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4C665A0714FA4D0900E59880 /* ConnectionMonitor */ = {
+		4C665A0714FA4D0900E59880 /* EasyStatus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4C665A2614FA4D0900E59880 /* Build configuration list for PBXNativeTarget "ConnectionMonitor" */;
+			buildConfigurationList = 4C665A2614FA4D0900E59880 /* Build configuration list for PBXNativeTarget "EasyStatus" */;
 			buildPhases = (
 				4C665A0414FA4D0900E59880 /* Sources */,
 				4C665A0514FA4D0900E59880 /* Frameworks */,
@@ -117,9 +167,9 @@
 			);
 			dependencies = (
 			);
-			name = ConnectionMonitor;
+			name = EasyStatus;
 			productName = ConnectionMonitor;
-			productReference = 4C665A0814FA4D0900E59880 /* ConnectionMonitor.app */;
+			productReference = 4C665A0814FA4D0900E59880 /* EasyStatus.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -128,10 +178,10 @@
 		4C6659FF14FA4D0900E59880 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "HicknHack Software GmbH";
 			};
-			buildConfigurationList = 4C665A0214FA4D0900E59880 /* Build configuration list for PBXProject "ConnectionMonitor" */;
+			buildConfigurationList = 4C665A0214FA4D0900E59880 /* Build configuration list for PBXProject "EasyStatus" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -143,7 +193,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4C665A0714FA4D0900E59880 /* ConnectionMonitor */,
+				4C665A0714FA4D0900E59880 /* EasyStatus */,
 			);
 		};
 /* End PBXProject section */
@@ -156,6 +206,8 @@
 				4C665A1714FA4D0900E59880 /* InfoPlist.strings in Resources */,
 				4C665A1D14FA4D0900E59880 /* Credits.rtf in Resources */,
 				4C665A2314FA4D0900E59880 /* MainMenu.xib in Resources */,
+				4CB4E4C416061A8A0080C0B9 /* ESSettingsController.xib in Resources */,
+				4C09236416062FA000CDA4CF /* Defaults.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,7 +219,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C665A1914FA4D0900E59880 /* main.m in Sources */,
-				4C665A2014FA4D0900E59880 /* CMAppDelegate.m in Sources */,
+				4C665A2014FA4D0900E59880 /* ESAppDelegate.m in Sources */,
+				4CB4E4C316061A8A0080C0B9 /* ESSettingsController.m in Sources */,
+				4CCCB6A8162A21E800BC4D62 /* ESStatusDaemon.m in Sources */,
+				4CCCB6AB162A233000BC4D62 /* ESSettingsKeys.m in Sources */,
+				4C94C6A5162B368000184F89 /* ESConnectionDataDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,10 +307,11 @@
 		4C665A2714FA4D0900E59880 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ConnectionMonitor/ConnectionMonitor-Prefix.pch";
-				INFOPLIST_FILE = "ConnectionMonitor/ConnectionMonitor-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "ConnectionMonitor/EasyStatus-Prefix.pch";
+				INFOPLIST_FILE = "ConnectionMonitor/EasyStatus-Info.plist";
+				PRODUCT_NAME = EasyStatus;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -262,10 +319,11 @@
 		4C665A2814FA4D0900E59880 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ConnectionMonitor/ConnectionMonitor-Prefix.pch";
-				INFOPLIST_FILE = "ConnectionMonitor/ConnectionMonitor-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "ConnectionMonitor/EasyStatus-Prefix.pch";
+				INFOPLIST_FILE = "ConnectionMonitor/EasyStatus-Info.plist";
+				PRODUCT_NAME = EasyStatus;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -273,7 +331,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4C665A0214FA4D0900E59880 /* Build configuration list for PBXProject "ConnectionMonitor" */ = {
+		4C665A0214FA4D0900E59880 /* Build configuration list for PBXProject "EasyStatus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4C665A2414FA4D0900E59880 /* Debug */,
@@ -282,13 +340,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4C665A2614FA4D0900E59880 /* Build configuration list for PBXNativeTarget "ConnectionMonitor" */ = {
+		4C665A2614FA4D0900E59880 /* Build configuration list for PBXNativeTarget "EasyStatus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4C665A2714FA4D0900E59880 /* Debug */,
 				4C665A2814FA4D0900E59880 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
