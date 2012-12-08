@@ -1,0 +1,3 @@
+[submodule "SSKeychain"]
+	path = SSKeychain
+	url = https://mstarke@github.com/samsoffes/sskeychain.git
