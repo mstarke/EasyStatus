@@ -8,5 +8,5 @@
 
 #import "ESSettingsKeys.h"
 
-NSString *const kESSettingsKeyLogin = @"Login";
-NSString *const kESSettingsKeyPassword = @"Password";
+NSString *const kEasyStatusServiceName = @"EasySettings Login";
+

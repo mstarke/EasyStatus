@@ -15,6 +15,8 @@
 		4C665A2014FA4D0900E59880 /* ESAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C665A1F14FA4D0900E59880 /* ESAppDelegate.m */; };
 		4C665A2314FA4D0900E59880 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C665A2114FA4D0900E59880 /* MainMenu.xib */; };
 		4C94C6A5162B368000184F89 /* ESConnectionDataDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C94C6A4162B368000184F89 /* ESConnectionDataDelegate.m */; };
+		4CB358E51673E88100D666BD /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB358D31673E88100D666BD /* SSKeychain.m */; };
+		4CB358F21673E8DD00D666BD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB358F11673E8DD00D666BD /* Security.framework */; };
 		4CB4E4C316061A8A0080C0B9 /* ESSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB4E4C116061A8A0080C0B9 /* ESSettingsController.m */; };
 		4CB4E4C416061A8A0080C0B9 /* ESSettingsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CB4E4C216061A8A0080C0B9 /* ESSettingsController.xib */; };
 		4CCCB6A8162A21E800BC4D62 /* ESStatusDaemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCCB6A7162A21E800BC4D62 /* ESStatusDaemon.m */; };
@@ -38,6 +40,9 @@
 		4C665A2214FA4D0900E59880 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		4C94C6A3162B368000184F89 /* ESConnectionDataDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESConnectionDataDelegate.h; sourceTree = "<group>"; };
 		4C94C6A4162B368000184F89 /* ESConnectionDataDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESConnectionDataDelegate.m; sourceTree = "<group>"; };
+		4CB358D21673E88100D666BD /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
+		4CB358D31673E88100D666BD /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
+		4CB358F11673E8DD00D666BD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		4CB4E4C016061A8A0080C0B9 /* ESSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESSettingsController.h; sourceTree = "<group>"; };
 		4CB4E4C116061A8A0080C0B9 /* ESSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESSettingsController.m; sourceTree = "<group>"; };
 		4CB4E4C216061A8A0080C0B9 /* ESSettingsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ESSettingsController.xib; sourceTree = "<group>"; };
@@ -52,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CB358F21673E8DD00D666BD /* Security.framework in Frameworks */,
 				4C665A0D14FA4D0900E59880 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -62,6 +68,7 @@
 		4C6659FD14FA4D0900E59880 = {
 			isa = PBXGroup;
 			children = (
+				4CB358CC1673E88100D666BD /* SSKeychain */,
 				4C665A1214FA4D0900E59880 /* EasyStatus */,
 				4C665A0B14FA4D0900E59880 /* Frameworks */,
 				4C665A0914FA4D0900E59880 /* Products */,
@@ -79,6 +86,7 @@
 		4C665A0B14FA4D0900E59880 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4CB358F11673E8DD00D666BD /* Security.framework */,
 				4C665A0C14FA4D0900E59880 /* Cocoa.framework */,
 				4C665A0E14FA4D0900E59880 /* Other Frameworks */,
 			);
@@ -117,6 +125,15 @@
 				4C09236316062FA000CDA4CF /* Defaults.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4CB358CC1673E88100D666BD /* SSKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				4CB358D21673E88100D666BD /* SSKeychain.h */,
+				4CB358D31673E88100D666BD /* SSKeychain.m */,
+			);
+			path = SSKeychain;
 			sourceTree = "<group>";
 		};
 		4CB4E4C716061AA40080C0B9 /* Views */ = {
@@ -224,6 +241,7 @@
 				4CCCB6A8162A21E800BC4D62 /* ESStatusDaemon.m in Sources */,
 				4CCCB6AB162A233000BC4D62 /* ESSettingsKeys.m in Sources */,
 				4C94C6A5162B368000184F89 /* ESConnectionDataDelegate.m in Sources */,
+				4CB358E51673E88100D666BD /* SSKeychain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,12 +291,12 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -294,12 +312,12 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -309,8 +327,9 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ConnectionMonitor/EasyStatus-Prefix.pch";
-				INFOPLIST_FILE = "ConnectionMonitor/EasyStatus-Info.plist";
+				GCC_PREFIX_HEADER = "EasyStatus/EasyStatus-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/EasyStatus/EasyStatus-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = EasyStatus;
 				WRAPPER_EXTENSION = app;
 			};
@@ -321,8 +340,9 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ConnectionMonitor/EasyStatus-Prefix.pch";
-				INFOPLIST_FILE = "ConnectionMonitor/EasyStatus-Info.plist";
+				GCC_PREFIX_HEADER = "EasyStatus/EasyStatus-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/EasyStatus/EasyStatus-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = EasyStatus;
 				WRAPPER_EXTENSION = app;
 			};

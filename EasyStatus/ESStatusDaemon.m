@@ -67,9 +67,8 @@ NSString *const kSignalPercentNeedle = @"var signalPercent=";
 }
 
 - (void)login {
-  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-  NSString *login = [userDefaults stringForKey:kESSettingsKeyLogin];
-  NSString *password = [userDefaults stringForKey:kESSettingsKeyPassword];
+  NSString *login;// = [userDefaults stringForKey:kESSettingsKeyLogin];
+  NSString *password;// = [userDefaults stringForKey:kESSettingsKeyPassword];
   
   NSString *loginUrlString = [NSString stringWithFormat:kESLoginUrl, login, password];
   NSURL *loginUrl = [NSURL URLWithString:loginUrlString];
