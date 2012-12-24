@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ESSettingsController : NSWindowController
+@interface ESSettingsController : NSWindowController  <NSWindowDelegate>
 
 - (void)showSettings;
 

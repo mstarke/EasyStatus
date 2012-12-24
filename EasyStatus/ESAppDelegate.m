@@ -8,14 +8,13 @@
 
 #import "ESAppDelegate.h"
 #import "ESSettingsController.h"
-#import "ESStatusDaemon.h"
+#import "ESConnectionDaemon.h"
+#import "ESMenuController.h"
 
 @interface ESAppDelegate ()
 
-@property (strong) NSMutableDictionary *dataDictionary;
 @property (strong) ESSettingsController *settingsController;
-@property (strong) NSMutableArray *connections;
-@property (strong) ESStatusDaemon *statusDaemon;
+@property (strong) ESMenuController *menuController;
 
 @end
 
@@ -33,9 +32,9 @@
 
 #pragma mark Application lifecycle
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
-  self.statusDaemon = [[ESStatusDaemon alloc] init];
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+  [[ESConnectionDaemon defaultDaemon] enableMonitoring];
+  self.menuController = [[ESMenuController alloc] init];
 }
 
 #pragma mark Actions
@@ -44,5 +43,9 @@
     self.settingsController = [[ESSettingsController alloc] initWithWindowNibName:@"ESSettingsController"];
   }
   [self.settingsController showSettings];
+}
+
+- (IBAction)restartRouter:(id)sender {
+  [[ESConnectionDaemon defaultDaemon] restartRouter];
 }
 @end

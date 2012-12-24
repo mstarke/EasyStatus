@@ -8,12 +8,15 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class ESSettingsController;
+
 @interface ESAppDelegate : NSObject <NSApplicationDelegate>
 
 #pragma mark properties
+@property (strong,readonly) ESSettingsController *settingsController;
 @property (assign) IBOutlet NSWindow *window;
 
 #pragma mark actions
 - (IBAction)showPreferences:(id)sender;
-
+- (IBAction)restartRouter:(id)sender;
 @end
