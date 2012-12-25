@@ -23,6 +23,7 @@
 		4CB358F21673E8DD00D666BD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB358F11673E8DD00D666BD /* Security.framework */; };
 		4CB4E4C316061A8A0080C0B9 /* ESSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB4E4C116061A8A0080C0B9 /* ESSettingsController.m */; };
 		4CB4E4C416061A8A0080C0B9 /* ESSettingsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CB4E4C216061A8A0080C0B9 /* ESSettingsController.xib */; };
+		4CFF55EA168A0F6400E7CC44 /* NSString+ESStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFF55E9168A0F6400E7CC44 /* NSString+ESStringAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,8 @@
 		4CB4E4C016061A8A0080C0B9 /* ESSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESSettingsController.h; sourceTree = "<group>"; };
 		4CB4E4C116061A8A0080C0B9 /* ESSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESSettingsController.m; sourceTree = "<group>"; };
 		4CB4E4C216061A8A0080C0B9 /* ESSettingsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ESSettingsController.xib; sourceTree = "<group>"; };
+		4CFF55E8168A0F6400E7CC44 /* NSString+ESStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ESStringAdditions.h"; sourceTree = "<group>"; };
+		4CFF55E9168A0F6400E7CC44 /* NSString+ESStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ESStringAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +138,7 @@
 		4C665A1214FA4D0900E59880 /* EasyStatus */ = {
 			isa = PBXGroup;
 			children = (
+				4CFF55EC168A101600E7CC44 /* Categories */,
 				4C43ADA31688FBE9006C3D00 /* Controller */,
 				4C1E12CE1687A410002D9F0F /* Connection */,
 				4CB4E4C816061AC40080C0B9 /* Delegates */,
@@ -183,6 +187,15 @@
 				4C665A1F14FA4D0900E59880 /* ESAppDelegate.m */,
 			);
 			name = Delegates;
+			sourceTree = "<group>";
+		};
+		4CFF55EC168A101600E7CC44 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				4CFF55E8168A0F6400E7CC44 /* NSString+ESStringAdditions.h */,
+				4CFF55E9168A0F6400E7CC44 /* NSString+ESStringAdditions.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +273,7 @@
 				4C1E12D11687B1E3002D9F0F /* ESConnectionDaemon.m in Sources */,
 				4C1E12D41687C7C8002D9F0F /* ESCredentialManager.m in Sources */,
 				4C43ADA71688FC11006C3D00 /* ESMenuController.m in Sources */,
+				4CFF55EA168A0F6400E7CC44 /* NSString+ESStringAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
