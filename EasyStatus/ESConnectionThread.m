@@ -22,7 +22,7 @@ NSString *const kESConnectionThreadLoginUrl = @"http://easy.box/cgi-bin/login.ex
 NSString *const kESConnectionThreadStatusUrl = @"http://easy.box/status_main.stm";
 NSString *const kESConnectionThreadLogOutUrl = @"http://easy.box/cgi-bin/logout.exe";
 NSString *const kESConnectionThreadLoginSuccessNeedle = @"setupa_brief.stm";
-NSTimeInterval kESConnectionThreadSleepInterval = 60.0;
+NSTimeInterval kESConnectionThreadSleepInterval = 5.0;
 NSTimeInterval kESReachablityTimeOut = 2.0;
 
 /*
@@ -38,12 +38,11 @@ NSString *const kESSignalPercentKey = @"signalPercent";
 @interface ESConnectionThread ()
 
 @property (strong) NSURLConnection *reachablitiyTestConnection;
-@property (assign) ESConnectionThreadStatus status;
-@property (assign) BOOL canReachRouter;
-@property (strong) NSDictionary *valueDict;
+@property (assign) ESConnectionStatus status;
+@property (assign) BOOL statusDidChange;
+@property (strong) NSDictionary *statusInformation;
 
-- (void)sendNotification;
-- (void)updateRouterReachability;
+- (void)postStatusChangedNotification;
 - (void)updateStatus;
 - (BOOL)login;
 - (BOOL)logout;
@@ -56,51 +55,31 @@ NSString *const kESSignalPercentKey = @"signalPercent";
   // gather credentials
   while(NO == [self isCancelled]) {
     @autoreleasepool {
-      [self updateRouterReachability];
-      
-      if(NO == self.canReachRouter) {
-        self.status = ESConnectionStatusOffline;
-      }
-      else {
-        if ([self login]) {
-          [self updateStatus];
-          [self logout];
-        }
-      }
-      if(self.valueDict != nil) {
-        NSLog(@"%@: %@", kESSignalPercentKey, self.valueDict[kESSignalPercentKey]);
-        NSLog(@"%@: %@", kESModemBusyKey, self.valueDict[kESModemBusyKey]);
-        NSLog(@"%@: %@", kESModemConnectKey, self.valueDict[kESModemConnectKey]);
-        NSLog(@"%@: %@", kESModemDialingKey, self.valueDict[kESModemDialingKey]);
-        NSLog(@"%@: %@", kESModemDisconnectingKey, self.valueDict[kESModemDisconnectingKey]);
-      }
+//      self.statusDidChange = NO;
+//      if ([self login]) {
+//        [self updateStatus];
+//        [self logout];
+//      }
+//      if(self.statusDidChange) {
+        [self postStatusChangedNotification];
+//      }
       [NSThread sleepForTimeInterval:kESConnectionThreadSleepInterval];
     }
   }
 }
 
-- (void)sendNotification {
+- (void)postStatusChangedNotification {
   NSDictionary *userInfo = @{ ESConnectionThreadConnectionStatusKey: @(self.status), ESConnectionThreadSignalStrengthKey: @1.0 };
   [[NSNotificationCenter defaultCenter] postNotificationName:ESConnectionThreadStatusUpdateNotification object:self userInfo:userInfo];
 }
-
-- (void)updateRouterReachability {
-  NSURL *routerURL = [NSURL URLWithString:kESRouterURLString];
-  NSURLRequest *urlRequest = [NSURLRequest requestWithURL:routerURL cachePolicy:NSURLCacheStorageNotAllowed timeoutInterval:kESReachablityTimeOut];
-  NSURLResponse *response = nil;
-  NSError *error = nil;
-  NSData *data = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:&error];
-  self.canReachRouter = ( data != nil);
-}
-
 
 - (void)updateStatus {
   NSURL *statusURL = [NSURL URLWithString:kESConnectionThreadStatusUrl];
   NSError *error = nil;
   NSString *htmlFile = [NSString stringWithContentsOfURL:statusURL encoding:NSWindowsCP1252StringEncoding error:&error];
   if(htmlFile == nil) {
-    self.status = ESConnectionStatusOffline;
-    self.valueDict = nil;
+    self.status = ESConnectionStatusRouterUnreachable;
+    self.statusDidChange = YES;
     return; // nothing to do, connection error
   }
   else {
@@ -120,7 +99,6 @@ NSString *const kESSignalPercentKey = @"signalPercent";
         assignmentDict[variableName] = valueString;
       }
     }
-    self.valueDict = assignmentDict;
   }
 }
 

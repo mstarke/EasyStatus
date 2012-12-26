@@ -13,14 +13,14 @@ APPKIT_EXTERN NSString *const ESConnectionThreadSignalStrengthKey;
 APPKIT_EXTERN NSString *const ESConnectionThreadConnectionStatusKey;
 
 typedef enum {
-  ESConnectionStatusUnknown,
-  ESConnectioNStatusOnline,
-  ESConnectionStatusOffline
+  ESConnectionStatusRouterUnreachable,
+  ESConnectioNStatusConnectionOnline,
+  ESConnectionStatusConnectionOffline
 }
-ESConnectionThreadStatus;
+ESConnectionStatus;
 
 @interface ESConnectionThread : NSThread <NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 
-@property (assign, readonly) ESConnectionThreadStatus status;
+@property (assign, readonly) ESConnectionStatus status;
 
 @end
