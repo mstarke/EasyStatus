@@ -39,6 +39,7 @@
   [self.loginTextfield setStringValue:defaultManager.login];
   [self.passwordTextField setStringValue:defaultManager.password];
   [self showWindow:self.window];
+  [self.window makeKeyAndOrderFront:self.window];
 }
 
 @end

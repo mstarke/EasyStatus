@@ -42,6 +42,7 @@
     [self.statusBarItem setEnabled:YES];
     [self.statusBarItem setHighlightMode:YES];
     [self.statusBarItem setMenu:self.menu];
+    [self.restartItem setEnabled:NO];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didChangeStatus:) name:ESConnectionThreadStatusUpdateNotification object:nil];
   }
   return self;
@@ -71,6 +72,7 @@
   else {
     NSDictionary *userInfo = [notification userInfo];
     ESConnectionStatus status = [userInfo[ESConnectionThreadConnectionStatusKey] intValue];
+    NSInteger signalStrength = [userInfo[ESConnectionThreadSignalStrengthKey] integerValue];
     //NSNumber *signalStrength = userInfo[ESConnectionThreadSignalStrengthKey];
     NSString *imageName;
     NSString *statusString;
@@ -81,7 +83,7 @@
         break;
       case ESConnectioNStatusConnectionOnline:
         imageName = NSImageNameStatusAvailable;
-        statusString = @"Online";
+        statusString = [NSString stringWithFormat:@"Online (%li%%)", signalStrength ];
         break;
       case ESConnectionStatusRouterUnreachable:
       default:
@@ -94,6 +96,7 @@
     [statusImage setSize:imageSize];
     [self.statusBarItem setImage:statusImage];
     [self.statusItem setTitle:statusString];
+    [self.restartItem setEnabled:status != ESConnectionStatusRouterUnreachable ];
   }
 }
 
