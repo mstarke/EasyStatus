@@ -30,5 +30,5 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
 ##Credits
-This software makes use SSKeyChain Copyright &copy 2010-2012 Sam Soffes
+This software makes use SSKeyChain Copyright &copy; 2010-2012 Sam Soffes
 
