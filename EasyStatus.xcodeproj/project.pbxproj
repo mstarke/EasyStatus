@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4C09236416062FA000CDA4CF /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C09236316062FA000CDA4CF /* Defaults.plist */; };
-		4C152B08168789470069CFF4 /* ESConnectionThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C152B07168789470069CFF4 /* ESConnectionThread.m */; };
 		4C1E12D11687B1E3002D9F0F /* ESConnectionDaemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1E12D01687B1E3002D9F0F /* ESConnectionDaemon.m */; };
 		4C1E12D41687C7C8002D9F0F /* ESCredentialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1E12D31687C7C8002D9F0F /* ESCredentialManager.m */; };
 		4C43ADA71688FC11006C3D00 /* ESMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C43ADA61688FC11006C3D00 /* ESMenuController.m */; };
@@ -19,17 +18,23 @@
 		4C665A1D14FA4D0900E59880 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4C665A1B14FA4D0900E59880 /* Credits.rtf */; };
 		4C665A2014FA4D0900E59880 /* ESAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C665A1F14FA4D0900E59880 /* ESAppDelegate.m */; };
 		4C665A2314FA4D0900E59880 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C665A2114FA4D0900E59880 /* MainMenu.xib */; };
+		4C66EF52168D054D0072418D /* LogWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C66EF51168D054D0072418D /* LogWindow.xib */; };
+		4C66EF56168D0A680072418D /* ESLogController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C66EF55168D0A680072418D /* ESLogController.m */; };
 		4CB358E51673E88100D666BD /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB358D31673E88100D666BD /* SSKeychain.m */; };
 		4CB358F21673E8DD00D666BD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB358F11673E8DD00D666BD /* Security.framework */; };
 		4CB4E4C316061A8A0080C0B9 /* ESSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB4E4C116061A8A0080C0B9 /* ESSettingsController.m */; };
 		4CB4E4C416061A8A0080C0B9 /* ESSettingsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CB4E4C216061A8A0080C0B9 /* ESSettingsController.xib */; };
+		4CB598B7168CF7C7007DBB5E /* ConnectionOK.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 4CB598B1168CF7C7007DBB5E /* ConnectionOK.tiff */; };
+		4CB598B8168CF7C7007DBB5E /* ConnectionOK@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 4CB598B2168CF7C7007DBB5E /* ConnectionOK@2x.tiff */; };
+		4CB598B9168CF7C7007DBB5E /* Offline.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 4CB598B3168CF7C7007DBB5E /* Offline.tiff */; };
+		4CB598BA168CF7C7007DBB5E /* Offline@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 4CB598B4168CF7C7007DBB5E /* Offline@2x.tiff */; };
+		4CB598BB168CF7C7007DBB5E /* StatusUnknown.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 4CB598B5168CF7C7007DBB5E /* StatusUnknown.tiff */; };
+		4CB598BC168CF7C7007DBB5E /* StatusUnknown@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 4CB598B6168CF7C7007DBB5E /* StatusUnknown@2x.tiff */; };
 		4CFF55EA168A0F6400E7CC44 /* NSString+ESStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFF55E9168A0F6400E7CC44 /* NSString+ESStringAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4C09236316062FA000CDA4CF /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
-		4C152B06168789470069CFF4 /* ESConnectionThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESConnectionThread.h; sourceTree = "<group>"; };
-		4C152B07168789470069CFF4 /* ESConnectionThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESConnectionThread.m; sourceTree = "<group>"; };
 		4C1E12CF1687B1E3002D9F0F /* ESConnectionDaemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESConnectionDaemon.h; sourceTree = "<group>"; };
 		4C1E12D01687B1E3002D9F0F /* ESConnectionDaemon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESConnectionDaemon.m; sourceTree = "<group>"; };
 		4C1E12D21687C7C8002D9F0F /* ESCredentialManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESCredentialManager.h; sourceTree = "<group>"; };
@@ -50,12 +55,21 @@
 		4C665A1E14FA4D0900E59880 /* ESAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESAppDelegate.h; sourceTree = "<group>"; };
 		4C665A1F14FA4D0900E59880 /* ESAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESAppDelegate.m; sourceTree = "<group>"; };
 		4C665A2214FA4D0900E59880 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		4C66EF51168D054D0072418D /* LogWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogWindow.xib; sourceTree = "<group>"; };
+		4C66EF54168D0A680072418D /* ESLogController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESLogController.h; sourceTree = "<group>"; };
+		4C66EF55168D0A680072418D /* ESLogController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESLogController.m; sourceTree = "<group>"; };
 		4CB358D21673E88100D666BD /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
 		4CB358D31673E88100D666BD /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
 		4CB358F11673E8DD00D666BD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		4CB4E4C016061A8A0080C0B9 /* ESSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESSettingsController.h; sourceTree = "<group>"; };
 		4CB4E4C116061A8A0080C0B9 /* ESSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESSettingsController.m; sourceTree = "<group>"; };
 		4CB4E4C216061A8A0080C0B9 /* ESSettingsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ESSettingsController.xib; sourceTree = "<group>"; };
+		4CB598B1168CF7C7007DBB5E /* ConnectionOK.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ConnectionOK.tiff; sourceTree = "<group>"; };
+		4CB598B2168CF7C7007DBB5E /* ConnectionOK@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "ConnectionOK@2x.tiff"; sourceTree = "<group>"; };
+		4CB598B3168CF7C7007DBB5E /* Offline.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Offline.tiff; sourceTree = "<group>"; };
+		4CB598B4168CF7C7007DBB5E /* Offline@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Offline@2x.tiff"; sourceTree = "<group>"; };
+		4CB598B5168CF7C7007DBB5E /* StatusUnknown.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = StatusUnknown.tiff; sourceTree = "<group>"; };
+		4CB598B6168CF7C7007DBB5E /* StatusUnknown@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "StatusUnknown@2x.tiff"; sourceTree = "<group>"; };
 		4CFF55E8168A0F6400E7CC44 /* NSString+ESStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ESStringAdditions.h"; sourceTree = "<group>"; };
 		4CFF55E9168A0F6400E7CC44 /* NSString+ESStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ESStringAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,8 +90,6 @@
 		4C1E12CE1687A410002D9F0F /* Connection */ = {
 			isa = PBXGroup;
 			children = (
-				4C152B06168789470069CFF4 /* ESConnectionThread.h */,
-				4C152B07168789470069CFF4 /* ESConnectionThread.m */,
 				4C1E12CF1687B1E3002D9F0F /* ESConnectionDaemon.h */,
 				4C1E12D01687B1E3002D9F0F /* ESConnectionDaemon.m */,
 			);
@@ -93,6 +105,8 @@
 				4C1E12D31687C7C8002D9F0F /* ESCredentialManager.m */,
 				4C43ADA51688FC11006C3D00 /* ESMenuController.h */,
 				4C43ADA61688FC11006C3D00 /* ESMenuController.m */,
+				4C66EF54168D0A680072418D /* ESLogController.h */,
+				4C66EF55168D0A680072418D /* ESLogController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -138,6 +152,7 @@
 		4C665A1214FA4D0900E59880 /* EasyStatus */ = {
 			isa = PBXGroup;
 			children = (
+				4CB598AF168CF7BB007DBB5E /* Images */,
 				4CFF55EC168A101600E7CC44 /* Categories */,
 				4C43ADA31688FBE9006C3D00 /* Controller */,
 				4C1E12CE1687A410002D9F0F /* Connection */,
@@ -176,6 +191,7 @@
 				4C665A2114FA4D0900E59880 /* MainMenu.xib */,
 				4CB4E4C216061A8A0080C0B9 /* ESSettingsController.xib */,
 				4C43ADA81688FD3B006C3D00 /* Menu.xib */,
+				4C66EF51168D054D0072418D /* LogWindow.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -187,6 +203,19 @@
 				4C665A1F14FA4D0900E59880 /* ESAppDelegate.m */,
 			);
 			name = Delegates;
+			sourceTree = "<group>";
+		};
+		4CB598AF168CF7BB007DBB5E /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				4CB598B1168CF7C7007DBB5E /* ConnectionOK.tiff */,
+				4CB598B2168CF7C7007DBB5E /* ConnectionOK@2x.tiff */,
+				4CB598B3168CF7C7007DBB5E /* Offline.tiff */,
+				4CB598B4168CF7C7007DBB5E /* Offline@2x.tiff */,
+				4CB598B5168CF7C7007DBB5E /* StatusUnknown.tiff */,
+				4CB598B6168CF7C7007DBB5E /* StatusUnknown@2x.tiff */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		4CFF55EC168A101600E7CC44 /* Categories */ = {
@@ -255,6 +284,13 @@
 				4CB4E4C416061A8A0080C0B9 /* ESSettingsController.xib in Resources */,
 				4C09236416062FA000CDA4CF /* Defaults.plist in Resources */,
 				4C43ADA91688FD3B006C3D00 /* Menu.xib in Resources */,
+				4CB598B7168CF7C7007DBB5E /* ConnectionOK.tiff in Resources */,
+				4CB598B8168CF7C7007DBB5E /* ConnectionOK@2x.tiff in Resources */,
+				4CB598B9168CF7C7007DBB5E /* Offline.tiff in Resources */,
+				4CB598BA168CF7C7007DBB5E /* Offline@2x.tiff in Resources */,
+				4CB598BB168CF7C7007DBB5E /* StatusUnknown.tiff in Resources */,
+				4CB598BC168CF7C7007DBB5E /* StatusUnknown@2x.tiff in Resources */,
+				4C66EF52168D054D0072418D /* LogWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,11 +305,11 @@
 				4C665A2014FA4D0900E59880 /* ESAppDelegate.m in Sources */,
 				4CB4E4C316061A8A0080C0B9 /* ESSettingsController.m in Sources */,
 				4CB358E51673E88100D666BD /* SSKeychain.m in Sources */,
-				4C152B08168789470069CFF4 /* ESConnectionThread.m in Sources */,
 				4C1E12D11687B1E3002D9F0F /* ESConnectionDaemon.m in Sources */,
 				4C1E12D41687C7C8002D9F0F /* ESCredentialManager.m in Sources */,
 				4C43ADA71688FC11006C3D00 /* ESMenuController.m in Sources */,
 				4CFF55EA168A0F6400E7CC44 /* NSString+ESStringAdditions.m in Sources */,
+				4C66EF56168D0A680072418D /* ESLogController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

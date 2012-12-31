@@ -8,9 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
+APPKIT_EXTERN NSString *const ESConnectionDaemonStatusUpdateNotification;
+APPKIT_EXTERN NSString *const ESConnectionDaemonSignalStrengthKey;
+APPKIT_EXTERN NSString *const ESConnectionDaemonConnectionStatusKey;
+
+typedef enum {
+  ESConnectionStatusRouterUnreachable,
+  ESConnectioNStatusConnectionOnline,
+  ESConnectionStatusConnectionOffline
+}
+ESConnectionStatus;
+
 @interface ESConnectionDaemon : NSObject
 
 @property (nonatomic, weak, readonly) NSString *statusDescription;
+@property (nonatomic, weak, readonly) NSString *log;
 
 + (ESConnectionDaemon *)defaultDaemon;
 

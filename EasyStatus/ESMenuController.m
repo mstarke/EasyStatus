@@ -9,7 +9,7 @@
 #import "ESMenuController.h"
 #import "ESAppDelegate.h"
 #import "ESSettingsController.h"
-#import "ESConnectionThread.h"
+#import "ESConnectionDaemon.h"
 
 @interface ESMenuController ()
 
@@ -18,11 +18,14 @@
 @property (weak) IBOutlet NSMenuItem *preferencesItem;
 @property (weak) IBOutlet NSMenuItem *restartItem;
 @property (weak) IBOutlet NSMenuItem *quitItem;
+@property (weak) IBOutlet NSMenuItem *logItem;
 @property (strong) NSStatusItem *statusBarItem;
+
 
 - (IBAction)quit:(id)sender;
 - (IBAction)restart:(id)sender;
 - (IBAction)preferences:(id)sender;
+- (IBAction)log:(id)sender;
 
 - (void)didChangeStatus:(NSNotification *)notification;
 
@@ -37,13 +40,12 @@
     [[NSBundle mainBundle] loadNibNamed:@"Menu" owner:self topLevelObjects:&topLevelObjects];
     NSStatusBar *bar = [NSStatusBar systemStatusBar];
     self.statusBarItem = [bar statusItemWithLength:NSVariableStatusItemLength];
-    NSImage *menuIconImage = [NSImage imageNamed:NSImageNameStatusPartiallyAvailable];
-    [self.statusBarItem setImage:menuIconImage];
+    [self.statusBarItem setImage:[[NSBundle mainBundle] imageForResource:@"StatusUnknown"]];
     [self.statusBarItem setEnabled:YES];
     [self.statusBarItem setHighlightMode:YES];
     [self.statusBarItem setMenu:self.menu];
     [self.restartItem setEnabled:NO];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didChangeStatus:) name:ESConnectionThreadStatusUpdateNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didChangeStatus:) name:ESConnectionDaemonStatusUpdateNotification object:nil];
   }
   return self;
 }
@@ -52,6 +54,11 @@
   [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+
+- (IBAction)log:(id)sender {
+  ESAppDelegate *delegate = [NSApp delegate];
+  [delegate showLog];
+}
 
 - (IBAction)quit:(id)sender {
   [[NSApplication sharedApplication] terminate:self];
@@ -66,38 +73,31 @@
 }
 
 - (void)didChangeStatus:(NSNotification *)notification {
-  if(NO == [NSThread isMainThread]) {
-    [self performSelectorOnMainThread:@selector(didChangeStatus:) withObject:notification waitUntilDone:NO];
-  }
-  else {
     NSDictionary *userInfo = [notification userInfo];
-    ESConnectionStatus status = [userInfo[ESConnectionThreadConnectionStatusKey] intValue];
-    NSInteger signalStrength = [userInfo[ESConnectionThreadSignalStrengthKey] integerValue];
+    ESConnectionStatus status = [userInfo[ESConnectionDaemonConnectionStatusKey] intValue];
+    NSInteger signalStrength = [userInfo[ESConnectionDaemonSignalStrengthKey] integerValue];
     //NSNumber *signalStrength = userInfo[ESConnectionThreadSignalStrengthKey];
     NSString *imageName;
     NSString *statusString;
     switch (status) {
       case ESConnectionStatusConnectionOffline:
-        imageName = NSImageNameStatusUnavailable;
+        imageName = @"Offline";
         statusString = @"Offline";
         break;
       case ESConnectioNStatusConnectionOnline:
-        imageName = NSImageNameStatusAvailable;
+        imageName = @"ConnectionOK";
         statusString = [NSString stringWithFormat:@"Online (%li%%)", signalStrength ];
         break;
       case ESConnectionStatusRouterUnreachable:
       default:
         statusString = @"Router nicht erreichbar";
-        imageName = NSImageNameStopProgressFreestandingTemplate;
+        imageName = @"Offline";
         break;
     }
-    NSSize imageSize = NSMakeSize(16, 16);
-    NSImage *statusImage = [NSImage imageNamed:imageName];
-    [statusImage setSize:imageSize];
+    NSImage *statusImage = [[NSBundle mainBundle] imageForResource:imageName];
     [self.statusBarItem setImage:statusImage];
     [self.statusItem setTitle:statusString];
     [self.restartItem setEnabled:status != ESConnectionStatusRouterUnreachable ];
-  }
 }
 
 @end

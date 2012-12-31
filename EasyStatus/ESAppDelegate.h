@@ -9,14 +9,16 @@
 #import <Cocoa/Cocoa.h>
 
 @class ESSettingsController;
+@class ESLogController;
 
 @interface ESAppDelegate : NSObject <NSApplicationDelegate>
 
 #pragma mark properties
 @property (strong,readonly) ESSettingsController *settingsController;
+@property (strong,readonly) ESLogController *logController;
 @property (assign) IBOutlet NSWindow *window;
 
 #pragma mark actions
 - (IBAction)showPreferences:(id)sender;
-- (IBAction)restartRouter:(id)sender;
+- (void)showLog;
 @end

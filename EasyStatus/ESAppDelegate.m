@@ -10,11 +10,13 @@
 #import "ESSettingsController.h"
 #import "ESConnectionDaemon.h"
 #import "ESMenuController.h"
+#import "ESLogController.h"
 
 @interface ESAppDelegate ()
 
 @property (strong) ESSettingsController *settingsController;
 @property (strong) ESMenuController *menuController;
+@property (strong) ESLogController *logController;
 
 @end
 
@@ -37,6 +39,10 @@
   self.menuController = [[ESMenuController alloc] init];
 }
 
+- (void)applicationWillTerminate:(NSNotification *)notification {
+  [[ESConnectionDaemon defaultDaemon] cancelMonitoring];
+}
+
 #pragma mark Actions
 - (IBAction)showPreferences:(id)sender {
   if(self.settingsController == nil) {
@@ -45,7 +51,12 @@
   [self.settingsController showSettings];
 }
 
-- (IBAction)restartRouter:(id)sender {
-  [[ESConnectionDaemon defaultDaemon] restartRouter];
+- (void)showLog {
+  if(self.logController == nil) {
+    self.logController = [[ESLogController alloc] initWithWindowNibName:@"LogWindow"];
+  }
+  [self.logController showWindow:self.logController.window];
+  [self.logController.window makeKeyAndOrderFront:self.logController.window];
 }
+
 @end
