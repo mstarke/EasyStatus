@@ -70,6 +70,10 @@ NSString *const kESSignalPercentKey = @"signalPercent";
 }
 
 - (NSString *)log {
+  /*
+   TODO:
+   Retrieve the Log form the router. URL for the file is encoded in the status page vars
+   */
   return @"Log";
 }
 
@@ -115,7 +119,7 @@ NSString *const kESSignalPercentKey = @"signalPercent";
 - (void)postStatusChangedNotification {
   NSDictionary *userInfo =
   @{ ESConnectionDaemonConnectionStatusKey: @(self.statusData.status)
-  , ESConnectionDaemonSignalStrengthKey: @(self.statusData.signalStrength) };
+     , ESConnectionDaemonSignalStrengthKey: @(self.statusData.signalStrength) };
   
   dispatch_async(dispatch_get_main_queue(), ^(void){
     [[NSNotificationCenter defaultCenter] postNotificationName:ESConnectionDaemonStatusUpdateNotification
@@ -128,6 +132,7 @@ NSString *const kESSignalPercentKey = @"signalPercent";
   ESConnectionStatusData statusData = { -1, ESConnectionStatusRouterUnreachable };
   NSURL *statusURL = [NSURL URLWithString:kESConnectionDaemonStatusUrl];
   NSError *error = nil;
+  
   NSString *htmlFile = [NSString stringWithContentsOfURL:statusURL
                                                 encoding:NSWindowsCP1252StringEncoding
                                                    error:&error];
@@ -156,16 +161,21 @@ NSString *const kESSignalPercentKey = @"signalPercent";
     NSString *connectionString = assignmentDict[kESModemConnectKey];
     NSString *isDialingString = assignmentDict[kESModemDialingKey];
     if(connectionString && (NSOrderedSame == [connectionString compare:@"true" options:NSCaseInsensitiveSearch])) {
-        statusData.status = ESConnectioNStatusConnectionOnline;
+      statusData.status = ESConnectioNStatusConnectionOnline;
     }
     if(isDialingString && (NSOrderedSame == [connectionString compare:@"true" options:NSCaseInsensitiveSearch])) {
-        statusData.status = ESConnectionStatusConnectionDialing;
+      statusData.status = ESConnectionStatusConnectionDialing;
     }
   }
   return statusData;
 }
 
 - (BOOL)importStatus:(ESConnectionStatusData)data {
+  /*
+   Test if the Data has changed
+   and update the structur according to the changes
+   signal back to the caller if something did change
+   */
   ESConnectionStatusData myData = self.statusData;
   BOOL didChange = NO;
   if(myData.signalStrength != data.signalStrength ) {
@@ -187,6 +197,11 @@ NSString *const kESSignalPercentKey = @"signalPercent";
   NSString *loginUrlString = [NSString stringWithFormat:kESConnectionDaemonLoginUrl, credintialManager.login, credintialManager.password];
   NSURL *loginURL = [NSURL URLWithString:loginUrlString];
   NSError *loginError = nil;
+  /*
+   Since the EasyBox does not response with an authentication request but manages all login states
+   on the router, we can directly retrieve a string with the url contents and dertermine based on the content
+   if the user is logged in or not
+   */
   NSString *loginPage = [NSString stringWithContentsOfURL:loginURL encoding:NSWindowsCP1252StringEncoding error:&loginError];
   if(loginPage == nil) {
     if(error != NULL) {
@@ -212,6 +227,9 @@ NSString *const kESSignalPercentKey = @"signalPercent";
 }
 
 - (void)restartRouter {
+  /*
+   Call the Router with the direct restart URL
+   */
   [self cancelMonitoring];
   dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
   dispatch_async(queue, ^(void){

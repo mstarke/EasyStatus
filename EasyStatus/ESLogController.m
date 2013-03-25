@@ -18,7 +18,7 @@
 - (id)initWithWindow:(NSWindow *)window {
   self = [super initWithWindow:window];
   if (self) {
-    self.window = window;
+//    self.window = window;
   }
   return self;
 }
