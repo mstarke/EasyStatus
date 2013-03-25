@@ -12,6 +12,10 @@
 		4C1E12D41687C7C8002D9F0F /* ESCredentialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1E12D31687C7C8002D9F0F /* ESCredentialManager.m */; };
 		4C43ADA71688FC11006C3D00 /* ESMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C43ADA61688FC11006C3D00 /* ESMenuController.m */; };
 		4C43ADA91688FD3B006C3D00 /* Menu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C43ADA81688FD3B006C3D00 /* Menu.xib */; };
+		4C4BCB081691F4DE00711943 /* Dialing.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 4C4BCB041691F4DE00711943 /* Dialing.tiff */; };
+		4C4BCB091691F4DE00711943 /* Dialing@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 4C4BCB051691F4DE00711943 /* Dialing@2x.tiff */; };
+		4C4BCB0A1691F4DE00711943 /* UserLoggedIn.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 4C4BCB061691F4DE00711943 /* UserLoggedIn.tiff */; };
+		4C4BCB0B1691F4DE00711943 /* UserLoggedIn@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 4C4BCB071691F4DE00711943 /* UserLoggedIn@2x.tiff */; };
 		4C665A0D14FA4D0900E59880 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C665A0C14FA4D0900E59880 /* Cocoa.framework */; };
 		4C665A1714FA4D0900E59880 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C665A1514FA4D0900E59880 /* InfoPlist.strings */; };
 		4C665A1914FA4D0900E59880 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C665A1814FA4D0900E59880 /* main.m */; };
@@ -20,6 +24,7 @@
 		4C665A2314FA4D0900E59880 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C665A2114FA4D0900E59880 /* MainMenu.xib */; };
 		4C66EF52168D054D0072418D /* LogWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C66EF51168D054D0072418D /* LogWindow.xib */; };
 		4C66EF56168D0A680072418D /* ESLogController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C66EF55168D0A680072418D /* ESLogController.m */; };
+		4C9303741691B3FE00113AF9 /* ESErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9303731691B3FE00113AF9 /* ESErrors.m */; };
 		4CB358E51673E88100D666BD /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB358D31673E88100D666BD /* SSKeychain.m */; };
 		4CB358F21673E8DD00D666BD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB358F11673E8DD00D666BD /* Security.framework */; };
 		4CB4E4C316061A8A0080C0B9 /* ESSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB4E4C116061A8A0080C0B9 /* ESSettingsController.m */; };
@@ -42,6 +47,10 @@
 		4C43ADA51688FC11006C3D00 /* ESMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESMenuController.h; sourceTree = "<group>"; };
 		4C43ADA61688FC11006C3D00 /* ESMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESMenuController.m; sourceTree = "<group>"; };
 		4C43ADA81688FD3B006C3D00 /* Menu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Menu.xib; sourceTree = "<group>"; };
+		4C4BCB041691F4DE00711943 /* Dialing.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Dialing.tiff; sourceTree = "<group>"; };
+		4C4BCB051691F4DE00711943 /* Dialing@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Dialing@2x.tiff"; sourceTree = "<group>"; };
+		4C4BCB061691F4DE00711943 /* UserLoggedIn.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = UserLoggedIn.tiff; sourceTree = "<group>"; };
+		4C4BCB071691F4DE00711943 /* UserLoggedIn@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "UserLoggedIn@2x.tiff"; sourceTree = "<group>"; };
 		4C665A0814FA4D0900E59880 /* EasyStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C665A0C14FA4D0900E59880 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		4C665A0F14FA4D0900E59880 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -58,6 +67,8 @@
 		4C66EF51168D054D0072418D /* LogWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogWindow.xib; sourceTree = "<group>"; };
 		4C66EF54168D0A680072418D /* ESLogController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESLogController.h; sourceTree = "<group>"; };
 		4C66EF55168D0A680072418D /* ESLogController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESLogController.m; sourceTree = "<group>"; };
+		4C9303721691B3FE00113AF9 /* ESErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESErrors.h; sourceTree = "<group>"; };
+		4C9303731691B3FE00113AF9 /* ESErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESErrors.m; sourceTree = "<group>"; };
 		4CB358D21673E88100D666BD /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
 		4CB358D31673E88100D666BD /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
 		4CB358F11673E8DD00D666BD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -152,6 +163,7 @@
 		4C665A1214FA4D0900E59880 /* EasyStatus */ = {
 			isa = PBXGroup;
 			children = (
+				4C9303681691B0B100113AF9 /* Common */,
 				4CB598AF168CF7BB007DBB5E /* Images */,
 				4CFF55EC168A101600E7CC44 /* Categories */,
 				4C43ADA31688FBE9006C3D00 /* Controller */,
@@ -174,6 +186,15 @@
 				4C09236316062FA000CDA4CF /* Defaults.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4C9303681691B0B100113AF9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4C9303721691B3FE00113AF9 /* ESErrors.h */,
+				4C9303731691B3FE00113AF9 /* ESErrors.m */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 		4CB358CC1673E88100D666BD /* SSKeychain */ = {
@@ -208,6 +229,10 @@
 		4CB598AF168CF7BB007DBB5E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4C4BCB041691F4DE00711943 /* Dialing.tiff */,
+				4C4BCB051691F4DE00711943 /* Dialing@2x.tiff */,
+				4C4BCB061691F4DE00711943 /* UserLoggedIn.tiff */,
+				4C4BCB071691F4DE00711943 /* UserLoggedIn@2x.tiff */,
 				4CB598B1168CF7C7007DBB5E /* ConnectionOK.tiff */,
 				4CB598B2168CF7C7007DBB5E /* ConnectionOK@2x.tiff */,
 				4CB598B3168CF7C7007DBB5E /* Offline.tiff */,
@@ -291,6 +316,10 @@
 				4CB598BB168CF7C7007DBB5E /* StatusUnknown.tiff in Resources */,
 				4CB598BC168CF7C7007DBB5E /* StatusUnknown@2x.tiff in Resources */,
 				4C66EF52168D054D0072418D /* LogWindow.xib in Resources */,
+				4C4BCB081691F4DE00711943 /* Dialing.tiff in Resources */,
+				4C4BCB091691F4DE00711943 /* Dialing@2x.tiff in Resources */,
+				4C4BCB0A1691F4DE00711943 /* UserLoggedIn.tiff in Resources */,
+				4C4BCB0B1691F4DE00711943 /* UserLoggedIn@2x.tiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +339,7 @@
 				4C43ADA71688FC11006C3D00 /* ESMenuController.m in Sources */,
 				4CFF55EA168A0F6400E7CC44 /* NSString+ESStringAdditions.m in Sources */,
 				4C66EF56168D0A680072418D /* ESLogController.m in Sources */,
+				4C9303741691B3FE00113AF9 /* ESErrors.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

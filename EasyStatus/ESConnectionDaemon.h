@@ -13,15 +13,18 @@ APPKIT_EXTERN NSString *const ESConnectionDaemonSignalStrengthKey;
 APPKIT_EXTERN NSString *const ESConnectionDaemonConnectionStatusKey;
 
 typedef enum {
-  ESConnectionStatusRouterUnreachable,
-  ESConnectioNStatusConnectionOnline,
-  ESConnectionStatusConnectionOffline
+  ESConnectionStatusRouterUnreachable, // Router is not reachable
+  ESConnectionStatusOtherUserLoggedIn, // Another user is logged in into the admin interface
+  ESConnectioNStatusConnectionOnline, // Online, internet available
+  ESConnectionStatusConnectionOffline, // Offline, no internet connection
+  ESConnectionStatusConnectionDialing // Modem is dialing
 }
 ESConnectionStatus;
 
+NSError *error;
+
 @interface ESConnectionDaemon : NSObject
 
-@property (nonatomic, weak, readonly) NSString *statusDescription;
 @property (nonatomic, weak, readonly) NSString *log;
 
 + (ESConnectionDaemon *)defaultDaemon;

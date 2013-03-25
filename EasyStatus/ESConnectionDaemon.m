@@ -8,6 +8,7 @@
 
 #import "ESConnectionDaemon.h"
 #import "ESCredentialManager.h"
+#import "ESErrors.h"
 #import "NSString+ESStringAdditions.h"
 
 typedef struct {
@@ -15,9 +16,9 @@ typedef struct {
   ESConnectionStatus status;
 } ESConnectionStatusData;
 
-NSString *const ESConnectionDaemonStatusUpdateNotification  = @"ESConnectionThreadStatusUpdateNotification";
-NSString *const ESConnectionDaemonSignalStrengthKey         = @"ESConnectionThreadSignalStrengthKey";
-NSString *const ESConnectionDaemonConnectionStatusKey       = @"ESConnectionThreadConnectionStatusKey";
+NSString *const ESConnectionDaemonStatusUpdateNotification = @"ESConnectionThreadStatusUpdateNotification";
+NSString *const ESConnectionDaemonSignalStrengthKey = @"ESConnectionThreadSignalStrengthKey";
+NSString *const ESConnectionDaemonConnectionStatusKey = @"ESConnectionThreadConnectionStatusKey";
 
 /*
  Private constants
@@ -51,7 +52,7 @@ NSString *const kESSignalPercentKey = @"signalPercent";
 - (void)postStatusChangedNotification;
 - (ESConnectionStatusData)readStatus;
 - (BOOL)importStatus:(ESConnectionStatusData) data;
-- (BOOL)login;
+- (BOOL)login:(NSError **)error;
 - (BOOL)logout;
 - (void)update;
 
@@ -66,10 +67,6 @@ NSString *const kESSignalPercentKey = @"signalPercent";
     sharedInstance = [[ESConnectionDaemon alloc] init];
   });
   return sharedInstance;
-}
-
-- (NSString *)statusDescription {
-  return @"status";
 }
 
 - (NSString *)log {
@@ -102,7 +99,8 @@ NSString *const kESSignalPercentKey = @"signalPercent";
   while(NO == [self.statusThread isCancelled]) {
     @autoreleasepool {
       ESConnectionStatusData statusData = { -1, ESConnectionStatusRouterUnreachable };
-      if ([self login]) {
+      NSError *error;
+      if ([self login:&error]) {
         statusData = [self readStatus];
         [self logout];
       }
@@ -115,10 +113,10 @@ NSString *const kESSignalPercentKey = @"signalPercent";
 }
 
 - (void)postStatusChangedNotification {
-  NSDictionary *userInfo = @{
-    ESConnectionDaemonConnectionStatusKey: @(self.statusData.status),
-    ESConnectionDaemonSignalStrengthKey: @(self.statusData.signalStrength)
-  };
+  NSDictionary *userInfo =
+  @{ ESConnectionDaemonConnectionStatusKey: @(self.statusData.status)
+  , ESConnectionDaemonSignalStrengthKey: @(self.statusData.signalStrength) };
+  
   dispatch_async(dispatch_get_main_queue(), ^(void){
     [[NSNotificationCenter defaultCenter] postNotificationName:ESConnectionDaemonStatusUpdateNotification
                                                         object:self
@@ -127,7 +125,7 @@ NSString *const kESSignalPercentKey = @"signalPercent";
 }
 
 - (ESConnectionStatusData)readStatus {
-  ESConnectionStatusData statusData = { -1, ESConnectionStatusConnectionOffline };
+  ESConnectionStatusData statusData = { -1, ESConnectionStatusRouterUnreachable };
   NSURL *statusURL = [NSURL URLWithString:kESConnectionDaemonStatusUrl];
   NSError *error = nil;
   NSString *htmlFile = [NSString stringWithContentsOfURL:statusURL
@@ -156,13 +154,12 @@ NSString *const kESSignalPercentKey = @"signalPercent";
       [signalScanner scanInteger:&statusData.signalStrength];
     }
     NSString *connectionString = assignmentDict[kESModemConnectKey];
-    if(connectionString) {
-      if( NSOrderedSame == [connectionString compare:@"true" options:NSCaseInsensitiveSearch] ) {
+    NSString *isDialingString = assignmentDict[kESModemDialingKey];
+    if(connectionString && (NSOrderedSame == [connectionString compare:@"true" options:NSCaseInsensitiveSearch])) {
         statusData.status = ESConnectioNStatusConnectionOnline;
-      }
-      if( NSOrderedSame == [connectionString compare:@"false" options:NSCaseInsensitiveSearch] ) {
-        statusData.status = ESConnectionStatusConnectionOffline;
-      }
+    }
+    if(isDialingString && (NSOrderedSame == [connectionString compare:@"true" options:NSCaseInsensitiveSearch])) {
+        statusData.status = ESConnectionStatusConnectionDialing;
     }
   }
   return statusData;
@@ -185,13 +182,16 @@ NSString *const kESSignalPercentKey = @"signalPercent";
   return didChange;
 }
 
-- (BOOL)login {
+- (BOOL)login:(NSError **)error {
   ESCredentialManager *credintialManager = [ESCredentialManager defaultManager];
   NSString *loginUrlString = [NSString stringWithFormat:kESConnectionDaemonLoginUrl, credintialManager.login, credintialManager.password];
   NSURL *loginURL = [NSURL URLWithString:loginUrlString];
   NSError *loginError = nil;
   NSString *loginPage = [NSString stringWithContentsOfURL:loginURL encoding:NSWindowsCP1252StringEncoding error:&loginError];
   if(loginPage == nil) {
+    if(error != NULL) {
+      *error = [NSError errorWithDomain:NSCocoaErrorDomain code:0 userInfo:@{}];
+    }
     return false;
   }
   NSRange loginSuccessNeedle = [loginPage rangeOfString:kESConnectionDaemonLoginSuccessNeedle];
@@ -215,7 +215,8 @@ NSString *const kESSignalPercentKey = @"signalPercent";
   [self cancelMonitoring];
   dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
   dispatch_async(queue, ^(void){
-    if(self.login) {
+    NSError *error;
+    if([self login:&error]) {
       NSURL *resetURL = [NSURL URLWithString:kESConnectionDaemonRestartUrl];
       NSURLRequest *urlRequest = [NSURLRequest requestWithURL:resetURL
                                                   cachePolicy:NSURLCacheStorageNotAllowed
