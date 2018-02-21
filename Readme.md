@@ -1,4 +1,4 @@
-#EasyStatus
+# EasyStatus
 
 EasyStatus is a simple Menu Bar item that show the current connection status of the Vodafone EasyBox 803.
 The implemenation is quite crude and is based heavily on parsing the javascript var lists used by the router interface.
@@ -29,6 +29,6 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-##Credits
+## Credits
 This software makes use SSKeyChain Copyright &copy; 2010-2012 Sam Soffes
 
